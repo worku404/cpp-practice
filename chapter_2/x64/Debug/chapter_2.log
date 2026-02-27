@@ -1,0 +1,6 @@
+﻿  input_experiment.cpp
+  chapter_2.cpp
+C:\class\programming with cpp\2ndSemister\input_experiment.cpp(7,62): error C2143: syntax error: missing ';' before '~'
+C:\class\programming with cpp\2ndSemister\input_experiment.cpp(7,64): error C2059: syntax error: ';'
+  input_with_test.cpp
+  Generating Code...
