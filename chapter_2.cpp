@@ -8,6 +8,7 @@
 int main()
 {
     vector_exp();
+    //vector_capacity();
 }
 //    //test_code();
 //    std::array<double, 5u> number{};
