@@ -44,3 +44,15 @@ AGENTS.md
 
 # debug information files
 *.dwo
+
+
+ .vs/
+CppProperties.json
+Debug/
+chapter_2.vcxproj
+chapter_2.vcxproj.filters
+chapter_2.vcxproj.user
+chapter_2/Debug/
+chapter_2/x64_backup/
+chapter_2_input_test/
+x64/
