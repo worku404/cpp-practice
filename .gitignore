@@ -1,0 +1,74 @@
+# Ignore all PDF files
+*.pdf
+AGENTS.md
+.github
+.vscode
+# Prerequisites
+*.d
+.vs/
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Linker files
+*.ilk
+
+# Debugger Files
+*.pdb
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# debug information files
+*.dwo
+
+<<<<<<< HEAD
+=======
+
+ .vs/
+>>>>>>> 8c5f622a7dc8230e8204a2e5414fc00b9528b29a
+CppProperties.json
+Debug/
+chapter_2.vcxproj
+chapter_2.vcxproj.filters
+chapter_2.vcxproj.user
+chapter_2/Debug/
+chapter_2/x64_backup/
+chapter_2_input_test/
+<<<<<<< HEAD
+x64/
+last.slnx
+last/
+.vs/
+last.slnx
+last/
+x64/
+last.vcxproj
+last.vcxproj.filters
+last.vcxproj.user
+=======
+>>>>>>> 8c5f622a7dc8230e8204a2e5414fc00b9528b29a
+x64/
