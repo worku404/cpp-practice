@@ -11,3 +11,21 @@ void vector_exp()
 		std::cout << num << '\n';
 	}
 }
+
+void vector_capacity()
+{
+	int x = 4;
+	std::vector <double> nums{ 1,2,3 };
+
+	while (x < 15) {
+
+		std::cout << "Initial vector capacity " << nums.capacity() << ".\n";
+		std::cout << "Initial vector size " << nums.size() << ".\n";
+
+		nums.push_back(x);
+		std::cout << "after adding " <<x<<" vector capacity " << nums.capacity() << ".\n";
+		std::cout << "after adding vector size " << nums.size() << ".\n";
+
+		++x;
+	}
+}
