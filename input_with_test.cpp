@@ -31,10 +31,10 @@ void test_code() {
      assert(value == 1);
 
     double unused{};
-    std::stringstream some_input{ "q" };
-    const bool ok = get_number(some_input, unused);
+    std::stringstream some_in{ "q" };
+    const bool not_ok = get_number(some_in, unused);
 
-    assert(!ok);
+    assert(!not_ok);
     //assert(unused == 1);
 
 }
