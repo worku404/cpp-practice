@@ -5,7 +5,7 @@ AGENTS.md
 .vscode
 # Prerequisites
 *.d
-
+.vs/
 # Compiled Object files
 *.slo
 *.lo
