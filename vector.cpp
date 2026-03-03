@@ -5,7 +5,7 @@ void vector_exp()
 {
 	std::vector<int> nums{ 1,2,3,4 };
 	nums.push_back(123);
-	nums.insert(2+nums.begin(), 321);
+	nums.insert(nums.begin(), nums.begin()+2, 1, 321);
 	for (const auto& num : nums)
 	{
 		std::cout << num << '\n';
@@ -28,4 +28,10 @@ void vector_capacity()
 
 		++x;
 	}
+	//erase elements
+	std::cout << "before erase" << nums.at(0) << '\n';
+	nums.erase(nums.begin());
+	std::cout << "after erase" << nums.at(0) <<'\n';
+	nums.erase(nums.begin() + 1, nums.begin() + 2);
 }
+
