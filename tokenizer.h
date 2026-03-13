@@ -1,5 +1,9 @@
 @pragma once
+
 #include <cstddef>
+#include <vector>
+#include "utilities.h"
+#include <string>
 
 enum class TokenType {
     Number,
@@ -13,7 +17,14 @@ enum class TokenType {
 };
 
 struct Token {
-    TokenType type;
     long long value;
+    TokenType type;
     std::size_t err_position;
-}
+};
+
+struct TokenizeResult {
+    std::vector<Token> tokens;
+    Status status;
+};
+
+TokenizeResult tokenize(const std::string& expression);
