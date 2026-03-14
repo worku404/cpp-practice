@@ -1,6 +1,7 @@
 @pragma once
 #include <cstddef>
 #include <memory>
+#include <vector>
 
 enum class AstNodeType {
     Number,

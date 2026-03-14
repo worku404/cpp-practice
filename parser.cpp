@@ -1,5 +1,4 @@
 #include "parser.h"
-#include <vector>
 
 ParseResult parse(const std::vector<Token>& tokens) {
     (void)tokens;
