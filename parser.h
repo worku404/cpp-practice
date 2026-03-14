@@ -40,3 +40,10 @@ struct BinaryNode : AstNode {
     std::unique_ptr<AstNode> left;
     std::unique_ptr<AstNode> right;
 };
+
+struct ParseResult {
+    std::unique_ptr<AstNode> root;
+    Status status;
+};
+
+ParseResult parse(const std::vector<Token>& tokens);
