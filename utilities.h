@@ -9,8 +9,11 @@ struct Status{
     std::string message;
     std::size_t err_position;
 };
+
 Status make_ok();
+
 Status make_error(const std::string& message, size_t err_position);
+
 inline bool is_ok(const Status& status) {
     return status.success;
 }
