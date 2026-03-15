@@ -301,9 +301,8 @@ On Windows (MinGW), executable is typically:
 
 ---
 
-## Portfolio Highlights
+## This project demonstrates:
 
-This project demonstrates:
 - clean modular C++ project structure
 - practical compiler front-end concepts (lexing, parsing, AST)
 - recursive algorithm design in production-style code
