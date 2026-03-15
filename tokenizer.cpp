@@ -1,6 +1,7 @@
 #include "tokenizer.h"
 #include <cctype>
 #include <limits>
+#include <winscard.h>
 
 namespace {
     void skip_whitespace(const std::string& expression, std::size_t& index) {
@@ -50,6 +51,13 @@ TokenizeResult tokenize(const std::string& expression) {
         const char ch = expression[index];
 
         if (std::isdigit(static_cast<unsigned char>(ch))) {
+            if (!result.tokens.empty() &&
+                result.tokens.back().type == TokenType::Number) {
+                    result.tokens.clear();
+                    result.status = make_error("Missing operator between numbers", position);
+                    return result;
+                }
+
             Token number_token;
             Status status = scan_number(expression, index, number_token);
 
