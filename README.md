@@ -1,5 +1,3 @@
-Use this as your `README.md` (portfolio-oriented and aligned to your plan):
-
 # Mini Expression Evaluator (C++17)
 
 [![C++17](https://img.shields.io/badge/C%2B%2B-17-blue.svg)](#)
