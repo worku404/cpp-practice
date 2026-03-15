@@ -31,16 +31,71 @@ namespace {
             ++index;
         }
 
-    out_token = Token{TokenType::Number, value, start};
+    out_token = Token{value, TokenType::Number, start};
     return make_ok();
     }
 }
 
 TokenizeResult tokenize(const std::string& expression) {
-    (void)expression;
-
     TokenizeResult result;
-    result.tokens = {};
-    result.status = make_error("Tokenizer not implimented yet.", 0)
+    std::size_t index = 0;
+
+    while (index < expression.size()) {
+        skip_whitespace(expression, index);
+        if (index >= expression.size()) {
+            break;
+        }
+
+        const std::size_t position = index;
+        const char ch = expression[index];
+
+        if (std::isdigit(static_cast<unsigned char>(ch))) {
+            Token number_token;
+            Status status = scan_number(expression, index, number_token);
+
+            if(!is_ok(status)) {
+                result.tokens.clear();
+                result.status = status;
+                return result;
+            }
+
+            result.tokens.push_back(number_token);
+            continue;
+        }
+
+        switch(ch) {
+            case '+':
+                result.tokens.push_back(Token{0, TokenType::Plus, position});
+                ++index;
+                break;
+            case '-':
+                result.tokens.push_back(Token{0, TokenType::Minus, index});
+                ++index;
+                break;
+            case '*':
+            result.tokens.push_back(Token{0, TokenType::Star, index});
+            ++index;
+            break;
+            case '/':
+            result.tokens.push_back(Token{0, TokenType::Slash, index});
+            ++index;
+            break;
+            case '(':
+            result.tokens.push_back(Token{0, TokenType::LParen, index});
+            ++index;
+            break;
+            case ')':
+            result.tokens.push_back(Token{0, TokenType::RParen, index});
+            ++index;
+            break;
+            default:
+            result.tokens.clear();
+                result.status = make_error("Unexpected character",  position);
+                return result;
+
+        }
+    }
+    result.tokens.push_back(Token{0, TokenType::End, expression.size()});
+    result.status = make_ok();
     return result;
 }
