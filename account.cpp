@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 #include <string>
 
 const int MAX_ACC = 100;
@@ -11,8 +12,11 @@ struct Account {
 };
 
 // functions
+void read_name(std::string name);
+void read_num(float num);
+
 void create_account(Account acc[], int* count);
-void display_account(Account acc[], int count);
+void display_accounts(Account acc[], int count);
 void deposit(Account acc[], int count);
 void withdraw(Account acc[], int count);
 void check_balance(Account acc[], int count);
@@ -40,7 +44,7 @@ int main() {
 			create_account(acc, &count);
 			break;
 		case 2:
-			display_account(acc, count);
+			display_accounts(acc, count);
 			break;
 		case 3:
 			deposit(acc, count);
@@ -62,6 +66,23 @@ int main() {
 
 	return 0;
 }
+
+//helper read name
+std::string read_name(std::ostream out,std::string desc,  std::istream in) {
+	std::string name;
+	out<<desc;
+
+	in >> name;
+
+	if (in) {
+		return name;
+	}
+	in.clear();
+	in.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	std::cout << "Invalid try again.";
+}
+
+
 
 //Create account
 void create_account(Account acc[], int* count) {
