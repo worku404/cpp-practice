@@ -156,3 +156,21 @@ void withdraw(Account acc[], int count) {
 	}
 	std::cout << "Account not found\n";
 }
+
+//Check balance
+
+void check_balance(Account acc[], int count) {
+	int num;
+
+	std::cout << "Enter Account Number: ";
+	std::cin >> num;
+
+	for (int i = 0; i < count; i++) {
+		if (acc[i].accNumber == num) {
+			std::cout << "Account Holder: " << acc[i].name << "\n"
+				<< "Balance: " << acc[i].balance << "\n";
+			return;
+		}
+	}
+	std::cout << "Account not found!\n";
+}
