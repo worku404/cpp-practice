@@ -125,3 +125,34 @@ void deposit(Account acc[], int count) {
 	std::cout << "Account not found!\n";
 }
 
+
+//Withdraw money
+
+void withdraw(Account acc[], int count) {
+	int num;
+	float amount;
+
+	std::cout << "Enter Account Number: ";
+	std::cin >> num;
+
+	for (int i = 0; i < count; i++) {
+		if (acc[i].accNumber == num) {
+			std::cout << "Enter amount to withdraw: ";
+			std::cin >> amount;
+
+			if (amount <= 0) {
+				std::cout << "Invalid amount!\n";
+			}
+			else if (amount > acc[i].balance) {
+				std::cout << "Insufficient balance!\n";
+			}
+
+			else {
+				acc[i].balance -= amount;
+				std::cout << "Withdrawal successful!\n";
+			}
+			return;
+		}
+	}
+	std::cout << "Account not found\n";
+}
