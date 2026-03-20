@@ -82,3 +82,20 @@ void create_account(Account acc[], int* count) {
 	(*count)++;
 	std::cout << "Account created successfully!\n";
 }
+
+// diplay all accounts
+void display_accounts(Account acc[], int count) {
+	if (count == 0) {
+		std::cout << "No accounts available!\n";
+		return;
+	}
+
+	std::cout << "\n========= Account List ==========\n";
+	for (int i = 0; i < count; i++) {
+		std::cout << "Account No: " << acc[i].accNumber << "\n"
+			<< "Name: " << acc[i].name << "\n"
+			<< "Balance: " << acc[i].balance << "\n"
+			<< "-----------------------------\n";
+	}
+}
+
