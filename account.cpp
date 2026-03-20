@@ -99,3 +99,29 @@ void display_accounts(Account acc[], int count) {
 	}
 }
 
+// Deposit money
+
+void deposit(Account acc[], int count) {
+	int num;
+	float amount;
+	std::cout << "Enter Account Number: ";
+	std::cin >> num;
+
+	for (int i = 0; i < count; i++) {
+		if (acc[i].accNumber == num) {
+			std::cout << "Enter amount to deposite: ";
+			std::cin >> amount;
+
+			if (amount > 0) {
+				acc[i].balance += amount;
+				std::cout << "Deposit successful!\n";
+			}
+			else {
+				std::cout << "Invalid amoun\n";
+			}
+			return;
+		}
+	}
+	std::cout << "Account not found!\n";
+}
+
