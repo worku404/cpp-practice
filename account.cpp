@@ -64,3 +64,21 @@ int main() {
 }
 
 //Create account
+void create_account(Account acc[], int* count) {
+	if (*count >= MAX_ACC) {
+		std::cout << "Cannot add more accounts\n";
+		return;
+	}
+	std::cout << "Enter Account Number: ";
+	std::cin >> acc[*count].accNumber;
+
+	std::cout << "Enter Name: ";
+	std::cin.ignore();
+	std::getline(std::cin, acc[*count].name);
+
+	std::cout << "Enter Initial Balance: ";
+	std::cin >> acc[*count].balance;
+
+	(*count)++;
+	std::cout << "Account created successfully!\n";
+}
